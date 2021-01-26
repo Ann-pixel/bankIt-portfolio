@@ -62,7 +62,7 @@ const inputClosePin = document.querySelector(".form__input--pin");
 //   ["GBP", "Pound sterling"],
 // ]);
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 const displayMovements = function (movements) {
   containerMovements.innerHTML = "";
@@ -80,3 +80,18 @@ const displayMovements = function (movements) {
   });
 };
 displayMovements(account1.movements);
+
+function calcDisplayBalance(movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} €`;
+}
+calcDisplayBalance(account1.movements);
+function createUserNames(accs) {
+  accs.forEach(function (acc) {
+    acc.userName = acc.owner
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word[0])
+      .join("");
+  });
+}
