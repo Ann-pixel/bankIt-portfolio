@@ -29,7 +29,13 @@ nav {
   align-items: center;
   padding: 0 2rem;
 }
-
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+.credit {
+  text-align: right;
+}
 .welcome {
   font-size: 1.9rem;
   font-weight: 500;
